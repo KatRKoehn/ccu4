@@ -1,0 +1,24 @@
+<h2>Home</h2>
+
+<form ng-submit="controller.save()">
+  <div class="form-group">
+    <label>Title: </label>
+    <input ng-model="controller.photo.title" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Description: </label>
+    <input ng-model="controller.photo.desc" class="form-control" />
+  </div>
+  <div class="form-group>
+    <button ng-click="controller.filepick()">Upload</button>
+  </div>
+<form>
+<br />
+
+<div class="row">
+  <div ng-repeat="photo in controller.photos">
+    <img ng-src="{{controller.photo.url | fpConvert:{w: 300} }}" />
+    <h4>{{photo.title}}</h4>
+    <p><label>Description: </label>{{photo.desc}}</p>
+  </div>
+</div>
